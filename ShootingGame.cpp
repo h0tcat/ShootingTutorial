@@ -98,7 +98,7 @@ void nori::ShootingTutorial::start()
 
 			isUpKeyDown = isKeyDown && this->sdlEvent.key.keysym.sym == SDLK_UP;
 			isDownKeyDown = isKeyDown && this->sdlEvent.key.keysym.sym == SDLK_DOWN;
-			isReturnKeyDown = isKeyDown && this->sdlEvent.key.keysym.sym == SDLK_RETURN;
+			isReturnKeyDown = isKeyDown && this->sdlEvent.key.keysym.sym == SDLK_SPACE;
 			isGameExit = isKeyDown && this->sdlEvent.key.keysym.sym == SDLK_ESCAPE;
 
 			if (isUpKeyDown)
