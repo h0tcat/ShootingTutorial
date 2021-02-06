@@ -102,9 +102,9 @@ void nori::ShootingTutorial::start()
 			isGameExit = isKeyDown && this->sdlEvent.key.keysym.sym == SDLK_ESCAPE;
 
 			if (isUpKeyDown)
-				this->eagle.y -= 5;
+				this->eagle.y -= 3;
 			else if (isDownKeyDown)
-				this->eagle.y += 5;
+				this->eagle.y += 3;
 
 			if (this->eagle.y <= 0)
 				this->eagle.y = 0;
