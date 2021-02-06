@@ -102,9 +102,9 @@ void nori::ShootingTutorial::start()
 			isGameExit = isKeyDown && this->sdlEvent.key.keysym.sym == SDLK_ESCAPE;
 
 			if (isUpKeyDown)
-				this->eagle.y -= 3;
+				this->eagle.y -= 2;
 			else if (isDownKeyDown)
-				this->eagle.y += 3;
+				this->eagle.y += 2;
 
 			if (this->eagle.y <= 0)
 				this->eagle.y = 0;
@@ -122,7 +122,7 @@ void nori::ShootingTutorial::start()
 			if (this->eagle.egg.isUsed)
 			{
 				this->eagle.egg.x += 6;
-				this->DrawChara(this->eggTexture, this->renderer, egg, this->eagle.egg.x, this->eagle.egg.y, 32, 32, SDL_FLIP_HORIZONTAL);
+				this->DrawChara(this->eggTexture, this->renderer, egg, this->eagle.egg.x, this->eagle.egg.y, 42, 42, SDL_FLIP_HORIZONTAL);
 				if (this->eagle.egg.x >= DEFAULT_WINDOW_WIDTH + 64)
 					this->eagle.egg.isUsed = false;
 			}
