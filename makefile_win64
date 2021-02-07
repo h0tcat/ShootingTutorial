@@ -1,0 +1,18 @@
+CC = x86_64-w64-mingw32-g++
+
+PKGCONFIG = `x86_64-w64-mingw32-pkg-config  --cflags --libs sdl2` `x86_64-w64-mingw32-pkg-config  --cflags --libs SDL2_image` `x86_64-w64-mingw32-pkg-config  --cflags --libs SDL2_mixer`
+
+INCLUDEPATH = "/usr/x86_64-w64-mingw32/sys-root/mingw/include"
+LIBRARYPATH = "/usr/x86_64-w64-mingw32/sys-root/mingw/lib"
+
+PGNAME = ShootingGame.exe
+OBJS = main.o ShootingGame.o
+
+$(PGNAME): $(OBJS)
+	$(CC) -o $@ $^ -std=c++11 $(PKGCONFIG) -I $(INCLUDEPATH) -L $(LIBRARYPATH) 
+.cpp.o:
+	$(CC) -c -o $@ $< -std=c++11 $(PKGCONFIG) -I $(INCLUDEPATH) -L $(LIBRARYPATH)
+
+.PHONY: clean
+clean:
+	rm -f $(PGNAME) $(OBJS)
