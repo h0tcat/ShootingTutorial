@@ -84,6 +84,7 @@ void nori::ShootingTutorial::start()
 
 	while (true)
 	{
+
 		SDL_PollEvent(&(this->sdlEvent));
 		if (isJikiDie)
 		{
@@ -95,10 +96,9 @@ void nori::ShootingTutorial::start()
 		else
 		{
 			isKeyDown = this->sdlEvent.type == SDL_KEYDOWN;
-
+			isReturnKeyDown = isKeyDown && this->sdlEvent.key.keysym.sym == SDLK_SPACE;
 			isUpKeyDown = isKeyDown && this->sdlEvent.key.keysym.sym == SDLK_UP;
 			isDownKeyDown = isKeyDown && this->sdlEvent.key.keysym.sym == SDLK_DOWN;
-			isReturnKeyDown = isKeyDown && this->sdlEvent.key.keysym.sym == SDLK_SPACE;
 			isGameExit = isKeyDown && this->sdlEvent.key.keysym.sym == SDLK_ESCAPE;
 
 			if (isUpKeyDown)
